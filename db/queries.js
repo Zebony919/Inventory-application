@@ -11,14 +11,19 @@ async function getAllGenres() {
 
 async function insertGame({
   name,
-  release_date,
+  date_released,
   cover_image,
   developers,
   rating,
 }) {
   pool.query(
-    "INSERT INTO games (name, date_released, cover_image, developers, rating) VALUES ($1)",
+    "INSERT INTO games (name, date_released, cover_image, developers, rating) VALUES ($1, $2, $3, $4, $5)",
+    [name, date_released, cover_image, developers, rating],
   );
 }
 
-module.exports = { getAllGames, getAllGenres, insertGame };
+async function deleteGame(id) {
+  await pool.query("DELETE FROM games WHERE id = $1", [id]);
+}
+
+module.exports = { getAllGames, getAllGenres, insertGame, deleteGame };

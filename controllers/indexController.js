@@ -7,4 +7,21 @@ async function getGames(req, res) {
   });
 }
 
-module.exports = { getGames };
+async function createGame(req, res) {
+  res.render("create", {
+    title: "Create New Game",
+  });
+}
+
+async function postGame(req, res) {
+  await db.insertGame(req.body);
+  res.redirect("/");
+}
+
+async function deleteGame(req, res) {
+  const gameId = req.params.id;
+  await db.deleteGame(gameId);
+  res.redirect("/");
+}
+
+module.exports = { getGames, createGame, postGame, deleteGame };

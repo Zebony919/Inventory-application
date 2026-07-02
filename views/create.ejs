@@ -1,0 +1,34 @@
+<html>
+  <body>
+    <h1><%= title %></h1>
+
+    <form action="/create" method="POST">
+      <label for="name">Name: </label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="releaseDate">Release Date: </label>
+      <input type="date" id="releaseDate" name="date_released" required />
+
+      <label for="image">Image: </label>
+      <input type="text" id="image" name="cover_image" required />
+
+      <label for="developers">Developers: </label>
+      <input type="text" id="developers" name="developers" required />
+
+      <label for="rating">Rating: </label>
+      <input
+        type="range"
+        min="0"
+        max="10"
+        value="5"
+        id="rating"
+        name="rating"
+        oninput="ratingOutput.value = this.value"
+        required
+      />
+      <output id="ratingOutput">5</output>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
