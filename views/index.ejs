@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <h1><%= title %></h1>
+
+        <% if (games) { %>
+            <% games.forEach((game) => { %>
+                <li>
+                    <%= game.name %>
+                </li>
+            <% }) %>
+        <% } %>
+    </body>
+</html>
