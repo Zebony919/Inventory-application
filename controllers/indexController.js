@@ -13,6 +13,21 @@ async function createGame(req, res) {
   });
 }
 
+async function viewGame(req, res) {
+  const gameId = req.params.id;
+  const game = await db.getGameById(gameId);
+
+  if (!game) {
+    return res.status(404).send("Game not found!");
+  }
+
+  console.log("Game: " + game);
+
+  res.render("view", {
+    game: game,
+  });
+}
+
 async function postGame(req, res) {
   await db.insertGame(req.body);
   res.redirect("/");
@@ -24,4 +39,4 @@ async function deleteGame(req, res) {
   res.redirect("/");
 }
 
-module.exports = { getGames, createGame, postGame, deleteGame };
+module.exports = { getGames, createGame, viewGame, postGame, deleteGame };

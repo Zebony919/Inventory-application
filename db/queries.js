@@ -26,4 +26,15 @@ async function deleteGame(id) {
   await pool.query("DELETE FROM games WHERE id = $1", [id]);
 }
 
-module.exports = { getAllGames, getAllGenres, insertGame, deleteGame };
+async function getGameById(id) {
+  const { rows } = await pool.query("SELECT * FROM games WHERE id = $1", [id]);
+  return rows[0];
+}
+
+module.exports = {
+  getAllGames,
+  getAllGenres,
+  insertGame,
+  deleteGame,
+  getGameById,
+};
