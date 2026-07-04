@@ -1,25 +1,33 @@
 <nav
-  class="bg-white shadow-md border-b border-slate-200 mb-6 px-6 py-4 rounded-xl"
+  class="w-full h-fit md:h-20 bg-gray-600 text-white py-4 md:py-0 border border-black"
 >
-  <div class="flex items-center justify-between max-w-6xl mx-auto">
-    <!-- App Logo / Brand Name -->
-    <a
-      href="/"
-      class="text-xl font-extrabold text-blue-600 hover:text-blue-700 transition"
+  <div
+    class="h-full flex flex-col md:flex-row items-center justify-center md:justify-between max-w-6xl mx-auto gap-4 md:gap-0 px-4"
+  >
+    <div
+      class="flex flex-col md:flex-row items-center gap-4 md:gap-10 font-nova-cut"
     >
-      🎮 GameInventory
-    </a>
-
-    <!-- Navigation Links -->
-    <div class="flex items-center space-x-6 font-medium text-slate-600">
-      <a href="/" class="hover:text-blue-600 transition">Home</a>
-      <a href="/genres" class="hover:text-blue-600 transition">Genres</a>
-      <a
-        href="/create"
-        class="bg-blue-50 text-blue-600 hover:bg-blue-100 px-3 py-1.5 rounded-lg transition"
-      >
-        + New Game
+      <a href="/" class="text-3xl md:text-4xl hover:text-black transition">
+        Game Warehouse
       </a>
+
+      <div class="flex items-center space-x-6 text-xl md:text-2xl font-iceland">
+        <a href="/" class="hover:text-black transition">Home</a>
+        <a href="games" class="hover:text-black transition">Games</a>
+        <a href="/genres" class="hover:text-black transition">Genres</a>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 text-xl md:text-2xl font-iceland">
+      <p>Search</p>
+      <form>
+        <input
+          type="text"
+          id="searchBar"
+          name="searchBar"
+          class="h-6 bg-white rounded-2xl px-3 text-black text-sm"
+        />
+      </form>
     </div>
   </div>
 </nav>
