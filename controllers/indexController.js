@@ -28,6 +28,10 @@ async function viewGame(req, res) {
   });
 }
 
+async function getGenres(req, res) {
+  res.render("genres");
+}
+
 async function postGame(req, res) {
   await db.insertGame(req.body);
   res.redirect("/");
@@ -39,4 +43,11 @@ async function deleteGame(req, res) {
   res.redirect("/");
 }
 
-module.exports = { getGames, createGame, viewGame, postGame, deleteGame };
+module.exports = {
+  getGames,
+  createGame,
+  viewGame,
+  getGenres,
+  postGame,
+  deleteGame,
+};

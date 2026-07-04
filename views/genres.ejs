@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genres</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Iceland&family=Nova+Cut&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <div class="h-300 bg-black text-white font-iceland">
+      <h1 class="w-fit pl-20 pt-20 text-5xl">CHOOSE A CATEGORY</h1>
+
+      <div class=""><%- include("./partials/categoryCard.ejs") %></div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
