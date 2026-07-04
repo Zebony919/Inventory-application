@@ -1,9 +1,10 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Iceland&family=Nova+Cut&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&family=Iceland&family=Nova+Cut&display=swap");
 
 @source "../../views/**/*.ejs";
 
 @theme {
   --font-nova-cut: "Nova Cut";
   --font-iceland: "Iceland";
+  --font-fell-double: "IM Fell Double Pica";
 }
