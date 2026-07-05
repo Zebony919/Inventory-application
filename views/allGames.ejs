@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&family=Iceland&family=Nova+Cut&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <div class="h-300 bg-black font-iceland">
+      <div class="flex items-center justify-between border text-white">
+        <h1 class="pl-20 pt-20 text-white text-5xl">All Games</h1>
+
+        <a href="/create" class="w-20 pt-20 pr-40 bg-gray-400">Add Game</a>
+      </div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>

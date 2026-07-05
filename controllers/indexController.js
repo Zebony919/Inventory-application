@@ -28,6 +28,10 @@ async function viewGame(req, res) {
   });
 }
 
+async function getAllGames(req, res) {
+  res.render("allGames");
+}
+
 async function getGenres(req, res) {
   res.render("genres");
 }
@@ -53,6 +57,7 @@ module.exports = {
   getHomepage,
   createGame,
   viewGame,
+  getAllGames,
   getGenres,
   getGenreGames,
   postGame,
