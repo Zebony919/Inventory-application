@@ -1,0 +1,21 @@
+<body>
+  <div
+    class="w-60 md:w-100 h-60 md:h-100 flex flex-col items-center bg-amber-500 rounded-2xl"
+  >
+
+    <a href="/genres/RPG" class="w-auto h-[80%]">
+      <img
+        src="<%= imagePath %>"
+        alt="RPG Category"
+        class="w-full h-full filter-[invert(41%)_sepia(97%)_saturate(1923%)_hue-rotate(350deg)_brightness(56%)_contrast(84%)]"
+        <%# filter trick lets images in the img tag be any color %>
+      />
+    </a>
+
+    <div
+      class="w-full h-[20%] flex justify-center items-center text-3xl md:text-5xl text-black bg-gray-300 rounded-2xl"
+    >
+      <h3><%= category %></h3>
+    </div>
+  </div>
+</body>

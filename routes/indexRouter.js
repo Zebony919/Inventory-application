@@ -6,6 +6,7 @@ indexRouter.get("/", indexController.getGames);
 indexRouter.get("/create", indexController.createGame);
 indexRouter.get("/view/:id", indexController.viewGame);
 indexRouter.get("/genres", indexController.getGenres);
+indexRouter.get("/genres/:genreName", indexController.getGenreGames);
 
 indexRouter.post("/create", indexController.postGame);
 indexRouter.post("/delete/:id", indexController.deleteGame);

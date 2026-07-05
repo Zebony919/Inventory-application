@@ -18,10 +18,61 @@
   <body>
     <%- include("./partials/navbar.ejs") %>
 
-    <div class="h-300 bg-black text-white font-iceland">
-      <h1 class="w-fit pl-20 pt-20 text-5xl">CHOOSE A CATEGORY</h1>
+    <div
+      class="flex flex-col items-center bg-black text-white font-iceland"
+    >
+      <h1
+        class="w-full md:pl-20 pt-10 md:pt-20 pb-10 text-5xl text-center md:text-left"
+      >
+        CHOOSE A CATEGORY
+      </h1>
 
-      <div class=""><%- include("./partials/categoryCard.ejs") %></div>
+      <div class="pb-20 grid grid-cols-[repeat(auto-fit, minmax(250px, 1fr))] md:grid-cols-3 gap-30">
+        <%- include("./partials/genreCard.ejs", {
+          imagePath: "/images/genres/dragon.svg",
+          category: "RPG"
+        }) %>
+
+        <%- include("./partials/genreCard.ejs", {
+          imagePath: "/images/genres/mountain.svg",
+          category: "ADVENTURE"
+        }) %>
+
+        <%- include("./partials/genreCard.ejs", {
+          imagePath: "/images/genres/floppyDisk.svg",
+          category: "SIMULATION"
+        }) %>
+
+        <%- include("./partials/genreCard.ejs", {
+          imagePath: "/images/genres/fist.svg",
+          category: "ACTION"
+        }) %>
+
+        <%- include("./partials/genreCard.ejs", {
+          imagePath: "/images/genres/gun.svg",
+          category: "SHOOTER"
+        }) %>
+
+        <%- include("./partials/genreCard.ejs", {
+          imagePath: "/images/genres/beach.svg",
+          category: "OPEN WORLD"
+        }) %>
+
+        <%- include("./partials/genreCard.ejs", {
+          imagePath: "/images/genres/dumbell.svg",
+          category: "FIGHTING"
+        }) %>
+
+        <%- include("./partials/genreCard.ejs", {
+          imagePath: "/images/genres/person.svg",
+          category: "PLATFORMER"
+        }) %>
+
+        <%- include("./partials/genreCard.ejs", {
+          imagePath: "/images/genres/ghost.svg",
+          category: "HORROR"
+        }) %>
+      </div>
     </div>
 
     <%- include("./partials/footer.ejs") %>
