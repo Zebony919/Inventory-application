@@ -1,8 +1,8 @@
 const db = require("../db/queries.js");
 
-async function getGames(req, res) {
+async function getHomepage(req, res) {
   res.render("index", {
-    title: "Games",
+    title: "Home",
     games: await db.getAllGames(),
   });
 }
@@ -50,7 +50,7 @@ async function deleteGame(req, res) {
 }
 
 module.exports = {
-  getGames,
+  getHomepage,
   createGame,
   viewGame,
   getGenres,

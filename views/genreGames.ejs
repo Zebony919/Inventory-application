@@ -4,10 +4,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= genreName %>></title>
+    <title><%= genreName %></title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Iceland&family=Nova+Cut&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <h1><%= genreName %></h1>
+    <%- include("./partials/navbar.ejs") %>
+
+    <div class=" pb-10 flex flex-col items-center bg-black">
+      <h1
+        class="w-full pb-20 pt-20 text-white text-5xl text-center font-iceland border"
+      >
+        <%= genreName %>
+      </h1>
+
+      <div class="grid grid-cols-[repeat(auto-fit, minmax(250px, 1fr))] md:grid-cols-4 gap-20">
+        <%- include("./partials/gameCard.ejs", {
+        gameName: "Resident Evil 4",
+        imagePath: "/images/gameCovers/re4.png"
+        }) %>
+
+        <%- include("./partials/gameCard.ejs", {
+        gameName: "Hollow Knight",
+        imagePath: "/images/gameCovers/hollowKnight.png"
+        }) %>
+
+        <%- include("./partials/gameCard.ejs", {
+        gameName: "Alien Isolation",
+        imagePath: "/images/gameCovers/alienIsolation.png"
+        }) %>
+
+        <%- include("./partials/gameCard.ejs", {
+        gameName: "Assasins Creed: Black Flag",
+        imagePath: "/images/gameCovers/blackFlag.png"
+        }) %>
+
+        <%- include("./partials/gameCard.ejs", {
+        gameName: "Death Stranding",
+        imagePath: "/images/gameCovers/deathStranding.png"
+        }) %>
+
+        <%- include("./partials/gameCard.ejs", {
+        gameName: "Demon Souls",
+        imagePath: "/images/gameCovers/demonSouls.png"
+        }) %>
+
+        <%- include("./partials/gameCard.ejs", {
+        gameName: "Final Fantasy 7 Remake",
+        imagePath: "/images/gameCovers/ff7.png"
+        }) %>
+
+        <%- include("./partials/gameCard.ejs", {
+        gameName: "Kingdom Come Deliverance",
+        imagePath: "/images/gameCovers/kingdomCome.png"
+        }) %>
+    
+    </div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
   </body>
 </html>
