@@ -1,34 +1,106 @@
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create</title>
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&family=Iceland&family=Nova+Cut&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
   <body>
-    <h1><%= title %></h1>
+    <%- include("./partials/navbar.ejs") %>
 
-    <form action="/create" method="POST">
-      <label for="name">Name: </label>
-      <input type="text" id="name" name="name" required />
+    <div
+      class="flex flex-col items-center pb-20 bg-black text-white font-iceland"
+    >
+      <h1 class="w-full pt-20 pb-20 md:pl-60 text-5xl text-center md:text-left">
+        Add New Game
+      </h1>
 
-      <label for="releaseDate">Release Date: </label>
-      <input type="date" id="releaseDate" name="date_released" required />
+      <form
+        action="/create"
+        method="POST"
+        class="w-[80%] md:w-200 p-5 bg-gray-400 flex flex-col gap-4 md:gap-20 text-2xl md:text-4xl text-black border-[20px] border-indigo-950"
+      >
+        <div class="flex flex-col">
+          <label for="name">Name: </label>
+          <input
+            class="w-[80%] mt-4 flex self-center bg-white rounded-3xl"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
 
-      <label for="image">Image: </label>
-      <input type="text" id="image" name="cover_image" required />
+        <div class="flex flex-col">
+          <label for="releaseDate">Release Date: </label>
+          <input
+            class="w-[80%] mt-4 flex self-center bg-white rounded-3xl"
+            type="date"
+            id="releaseDate"
+            name="date_released"
+            required
+          />
+        </div>
 
-      <label for="developers">Developers: </label>
-      <input type="text" id="developers" name="developers" required />
+        <div class="flex flex-col">
+          <label for="image">Image: </label>
+          <input
+            class="w-[80%] mt-4 flex self-center bg-white rounded-3xl"
+            type="file"
+            accept="image/*"
+            id="image"
+            name="cover_image"
+            required
+          />
+        </div>
 
-      <label for="rating">Rating: </label>
-      <input
-        type="range"
-        min="0"
-        max="10"
-        value="5"
-        id="rating"
-        name="rating"
-        oninput="ratingOutput.value = this.value"
-        required
-      />
-      <output id="ratingOutput">5</output>
+        <div class="flex flex-col">
+          <label for="developers">Developers: </label>
+          <input
+            class="w-[80%] mt-4 flex self-center bg-white rounded-3xl"
+            type="text"
+            id="developers"
+            name="developers"
+            required
+          />
+        </div>
 
-      <button type="submit">Submit</button>
-    </form>
+        <div class="flex flex-col">
+          <label for="rating">Rating: </label>
+
+          <div class="flex self-center">
+            <input
+              class="w-full mt-5 appearance-none h-[3px] bg-black cursor-pointer outline-none relative z-20 thumb:appearance-none thumb:w-4 thumb:h-4 thumb:bg-amber-400 thumb:rounded-full active:thumb:bg-amber-500 transition-all"
+              type="range"
+              min="0"
+              max="10"
+              value="5"
+              id="rating"
+              name="rating"
+              oninput="ratingOutput.value = this.value"
+              required
+            />
+            <output class="mt-1.5 ml-2" id="ratingOutput">5</output>
+          </div>
+        </div>
+
+        <button
+          class="w-30 flex self-center items-center justify-center bg-indigo-950 rounded-xl text-white"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
   </body>
 </html>

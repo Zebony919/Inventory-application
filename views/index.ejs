@@ -1,24 +1,39 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= title %></title>
-        <link rel="stylesheet" href="/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&family=Iceland&family=Nova+Cut&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&family=Iceland&family=Nova+Cut&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <body>
-        <%- include("./partials/navbar.ejs") %>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
 
-        <div class="flex flex-wrap flex-col items-center justify-center gap-40 h-180 md:h-300 bg-black bg-cover bg-center" style="background-image: url('/images/mainBG.png')">
-            <h1 class="pt-50 font-fell-double text-gray-600 text-4xl md:text-8xl text-center break-word">WELCOME TO THE GAME WAREHOUSE</h1>
-            <p class="font-fell-double text-gray-600 text-2xl md:text-5xl text-center break-word">BROWSE THE BEST GAMES ON THE MARKET</p>
-        </div>
+    <div
+      class="flex flex-wrap flex-col items-center justify-center gap-40 h-180 md:h-300 bg-black bg-cover bg-center"
+      style="background-image: url(&quot;/images/mainBG.png&quot;)"
+    >
+      <h1
+        class="pt-50 font-fell-double text-gray-600 text-4xl md:text-8xl text-center break-word"
+      >
+        WELCOME TO THE GAME WAREHOUSE
+      </h1>
+      <p
+        class="font-fell-double text-gray-600 text-2xl md:text-5xl text-center break-word"
+      >
+        BROWSE THE BEST GAMES ON THE MARKET
+      </p>
+    </div>
 
-        <div class="h-100 bg-black"></div>
+    <div class="h-100 bg-black"></div>
 
-        <%- include("./partials/footer.ejs") %>
-    </body>
+    <%- include("./partials/footer.ejs") %>
+  </body>
 </html>
