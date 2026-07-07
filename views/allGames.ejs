@@ -18,12 +18,24 @@
   <body>
     <%- include("./partials/navbar.ejs") %>
 
-    <div class="h-300 bg-black font-iceland">
-      <div class="flex items-center justify-between border text-white">
-        <h1 class="pl-20 pt-20 text-white text-5xl">All Games</h1>
+    <div class="pb-20 bg-black flex flex-col items-center justify-between font-iceland text-white">
+      <div class="w-full pt-20 mb-20 flex justify-between border">
+        <h1 class="md:pl-40 text-white text-5xl text-center md:text-left">All Games</h1>
 
-        <a href="/create" class="w-20 pt-20 pr-40 bg-gray-400">Add Game</a>
+        <a href="/create" class="w-40 h-15 mr-20 bg-gray-400 flex justify-center items-center rounded-2xl text-3xl text-black">Add Game</a>
       </div>
+
+
+        <div class="grid grid-cols-[repeat(auto-fit, minmax(250px, 1fr))] md:grid-cols-4 gap-20">
+          <% if (games && games.length > 0) { %>
+            <% games.forEach(game => { %>
+              <%- include("./partials/gameCard.ejs", {
+                gameName: game.name,
+                imagePath: game.cover_image
+              }); %>
+            <% }) %>
+          <% } %>
+        </div>
     </div>
 
     <%- include("./partials/footer.ejs") %>

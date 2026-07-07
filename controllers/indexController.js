@@ -28,8 +28,16 @@ async function viewGame(req, res) {
   });
 }
 
-async function getAllGames(req, res) {
-  res.render("allGames");
+async function getAllGamesPage(req, res) {
+  try {
+    const games = await db.getAllGames();
+    res.render("allGames", {
+      games: games,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("Server Error");
+  }
 }
 
 async function getGenres(req, res) {
@@ -43,8 +51,19 @@ async function getGenreGames(req, res) {
 }
 
 async function postGame(req, res) {
-  await db.insertGame(req.body);
-  res.redirect("/");
+  try {
+    const game = req.body;
+
+    const imageName = req.file ? req.file.filename : "default-cover.png";
+    const imagePath = `/images/gameCovers/${imageName}`;
+
+    game.cover_image = imagePath;
+
+    await db.insertGame(game);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("Error Adding Game");
+  }
 }
 
 async function deleteGame(req, res) {
@@ -57,7 +76,7 @@ module.exports = {
   getHomepage,
   createGame,
   viewGame,
-  getAllGames,
+  getAllGamesPage,
   getGenres,
   getGenreGames,
   postGame,
